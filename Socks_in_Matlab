@@ -1,0 +1,37 @@
+function socks(temp,scale)
+
+if nargin<2 %check number of input arguments
+    scale = 'C';
+end
+
+scale = double(scale); %convert everything to sweet, sweet Celsius
+if scale==70||scale==102
+  temp = (temp-32)*(5/9);  
+elseif scale ==75||scale==107
+   temp = temp-273.15; 
+elseif scale ==82||scale==114
+   temp = ((temp-491.67)*5)/9;
+elseif scale ==67||scale==99
+    temp = temp*1;
+else
+    error('Scale input not recognized'); %or not
+end
+
+if temp >19&&temp<71 %And then the recommendations. 
+    disp('No socks - sandal weather')
+elseif temp >= 71
+    disp('You are likely combusting. Socks are the least of your problems. But probably sandals.')
+elseif temp >15&&temp<20
+    disp('Light socks or sandals - the choice is yours!')    
+elseif temp >7&&temp<16
+    disp('Cotton or other light blend')
+elseif temp >-11&&temp<8
+    disp('Wool, heavy cotton, or flanel')    
+elseif temp >-51&&temp<-10
+    disp('Wool and more wool with wool on top. Wear at least two pairs.')
+elseif temp >-273&&temp<-50
+    disp('All the wool, and maybe some of those high-tech space socks you get at outdoor shops.')
+elseif temp <= -273
+    disp('It is at or below absolute zero. Socks are the least of your worries. Still, wool is probably your best bet.')
+end
+end
