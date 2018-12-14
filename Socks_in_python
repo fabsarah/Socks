@@ -1,0 +1,33 @@
+def socks(temp,scale = 'C'):
+
+#First, convert everything to sweet, sweet Celsius
+    if scale=='F' or scale=='f':
+      temp = (temp-32)*(5/9)  
+    elif scale =='K' or scale =='k':
+       temp = temp-273.15
+    elif scale =='R' or scale=='r':
+       temp = ((temp-491.67)*5)/9
+    elif scale =='C' or scale=='c':
+       temp = temp*1
+#or not...       
+    else:
+       print('Error: scale input not recognized \n')
+       return
+
+#now, the recommendations
+    if temp > 19 and temp< 71: 
+       print('No socks - sandal weather \n')
+    elif temp >= 71:
+       print('You are likely combusting. Socks are the least of your problems. But probably sandals. \n')
+    elif temp > 15 and temp < 20:
+       print('Light socks or sandals - the choice is yours! \n')    
+    elif temp > 7 and temp < 16:
+       print('Cotton or other light blend \n')
+    elif temp > -11 and temp < 8:
+       print('Wool, heavy cotton, or flanel \n')    
+    elif temp > -51 and temp< -10:
+       print('Wool and more wool with wool on top. Wear at least two pairs. \n')
+    elif temp > -273 and temp< -50:
+       print('All the wool, and maybe some of those high-tech space socks you get at outdoor shops. \n')
+    elif temp <= -273:
+       print('It is at or below absolute zero. Socks are the least of your worries. Still, wool is probably your best bet. \n')
